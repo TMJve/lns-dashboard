@@ -1,3 +1,5 @@
+// In your ROOT middleware.ts file
+
 import { updateSession } from "@/lib/supabase/middleware";
 import { type NextRequest } from "next/server";
 
@@ -15,6 +17,7 @@ export const config = {
      * - images - .svg, .png, .jpg, .jpeg, .gif, .webp
      * Feel free to modify this pattern to include more paths.
      */
-    '/((?!api/leads|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)/',
+    '/((?!api/leads|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    // REMOVED the trailing '/' from the string above
   ],
 };
